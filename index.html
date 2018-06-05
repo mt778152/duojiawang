@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/swiper-4.1.6.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script>
+        document.documentElement.style.fontSize = window.innerHeight / 750 * 100 + 'px';
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <span>＜</span>
+            <h4>多加网</h4>
+        </header>
+        <main>
+            <div class="search">
+                <img src="img/首页-logo@2x.png" alt="">
+                <p><input type="text" placeholder="搜索项目或医院"></p>
+                <h4>分类<img src="img/下拉icon@2x.png" alt=""></h4>
+            </div>
+            <div class="banner swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/banner@2x.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/banner@2x.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/banner@2x.png" alt=""></div>
+                </div>
+                <div class="page swiper-pagination"></div>
+            </div>
+            <div class="list">
+                <dl>
+                    <dt><img src="img/成单@2x.png" alt=""></dt>
+                    <dd>成单奖励</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/推荐@2x.png" alt=""></dt>
+                    <dd>推荐新人</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/收益@2x.png" alt=""></dt>
+                    <dd>收益滚利</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/年度@2x.png" alt=""></dt>
+                    <dd>阶梯奖励</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/客源@2x.png" alt=""></dt>
+                    <dd>异业拓客</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/集采@2x.png" alt=""></dt>
+                    <dd>集采返现</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/新品@2x.png" alt=""></dt>
+                    <dd>新品悬赏</dd>
+                </dl>
+                <dl>
+                    <dt><img src="img/期待@2x.png" alt=""></dt>
+                    <dd>敬请期待</dd>
+                </dl>
+            </div>
+            <div class="shop">
+                <span><img src="img/标示icon@2x.png" alt=""></span>
+                <h5>金牌商家</h5>
+            </div>
+            <div class="iscroll-box">
+                <ul style="width:1500px;">
+                    <li>悦美国际</li>
+                    <li>美人美丽</li>
+                    <li>同风格和</li>
+                    <li>乐山大佛</li>
+                    <li>爱未拆封</li>
+                    <li>位评分局</li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <dl>
+                <dt><img src="img/首页@2x.png" alt=""></dt>
+                <dd>首页</dd>
+            </dl>
+            <dl>
+                <dt><img src="img/我的@2x.png" alt=""></dt>
+                <dd>我的</dd>
+            </dl>
+        </footer>
+    </div>
+    <script src='js/swiper-4.1.6.min.js'></script>
+    <script src="js/iscroll-probe.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        new Swiper('.banner', {
+            autoplay: true,
+            loop: true,
+            delay: 500, //1秒切换一次
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+        var myIscroll = new IScroll(".iscroll-box", {
+            scrollX: true,
+            scrollY: false,
+            scrollbars: true, //出现滚动条
+            fadeScrollbars: true, //滚动淡入淡出
+            mouseWheel: true, //支持鼠标滚轮事件
+
+        });
+        var sum = 0;
+        $(".iscroll-box li").each(function() {
+            sum += $(this).innerWidth();
+        });
+        $(".iscroll-box ul").width(sum)
+        myIscroll.refresh();
+    </script>
+</body>
+
+</html>
